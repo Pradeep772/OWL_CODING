@@ -25,16 +25,11 @@ public:
         vector<int>v1,v2;
         dfs(root1,v1);
         dfs(root2,v2);
-        if(v1.size()!=v2.size()){
-            return 0;
+        if(v1==v2){
+            return 1;
         }
         else{
-            for(int i=0;i<v1.size();i++){
-                if(v1[i]!=v2[i]){
-                    return 0;
-                }
-            }
-            return 1;
+            return 0;
         }
         
     }
