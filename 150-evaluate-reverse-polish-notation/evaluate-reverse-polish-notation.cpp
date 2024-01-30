@@ -6,30 +6,22 @@ public:
             if(it=="+"){
                 int a=s.top();
                 s.pop();
-                a+=s.top();
-                s.pop();
-                s.push(a);
+                s.top()+=a;
             }
             else if(it=="*"){
                 int a=s.top();
                 s.pop();
-                a*=s.top();
-                s.pop();
-                s.push(a);
+                s.top()*=a;
             }
             else if(it=="/"){
                 int a=s.top();
                 s.pop();
-                a=s.top()/a;
-                s.pop();
-                s.push(a);
+                s.top()/=a;
             }
             else if(it=="-"){
             int a=s.top();
                 s.pop();
-                a=s.top()-a;
-                s.pop();
-                s.push(a);
+                s.top()-=a;
             }
             else{
                 s.push(stoi(it));
