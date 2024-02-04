@@ -1,8 +1,8 @@
 class Solution {
 public:
     string minWindow(string s, string t) {
-    if(s.size()<t.size())return "";
-    if(s==t)return s;
+    // if(s.size()<t.size())return "";
+    // if(s==t)return s;
     map<char,int>mp;
     for(auto it:t)mp[it]++;
     string ans="";
