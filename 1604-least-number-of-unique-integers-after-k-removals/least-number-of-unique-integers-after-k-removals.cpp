@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool check(pair<int,int>a,pair<int,int>b){
+    static bool check(pair<int,int>a,pair<int,int>b){
         if(a.second==b.second)return a.first<b.first;
         return a.second<b.second;
     }
@@ -13,7 +13,7 @@ public:
         for(auto it:mp){
             v.push_back({it.first,it.second});
         }
-        sort(v.begin(), v.end(), [this](pair<int,int>& a, pair<int,int>& b) { return check(a, b); });
+        sort(v.begin(), v.end(),check);
 
         for(auto it:v){
             if(k<it.second){
