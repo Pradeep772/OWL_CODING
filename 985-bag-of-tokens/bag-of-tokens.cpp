@@ -1,7 +1,7 @@
 class Solution {
 public:
     int bagOfTokensScore(vector<int>& t, int p) {
-        sort(t.begin(),t.end());
+       sort(t.begin(),t.end());
         int c=0;
         int i=0,j=t.size()-1;
         while(i<=j){
@@ -19,7 +19,7 @@ public:
                 p-=t[i];
                 i++;
             }
-            cout<<p<<" ";
+            //cout<<p<<" ";
         }
         return c;
     }
