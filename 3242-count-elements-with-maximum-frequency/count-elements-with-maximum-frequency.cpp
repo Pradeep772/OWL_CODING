@@ -2,12 +2,10 @@ class Solution {
 public:
     int maxFrequencyElements(vector<int>& nums) {
         map<int,int>mp;
+        int m=INT_MIN;
         for(auto it:nums){
             mp[it]++;
-        }
-        int m=INT_MIN;
-        for(auto it:mp){
-            m=max(m,it.second);
+            m=max(m,mp[it]);
         }
         int c=0;
         for(auto it:mp){
