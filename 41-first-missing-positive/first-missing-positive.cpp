@@ -1,22 +1,22 @@
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
-        map<int,int>mp;
+        set<int>st;
         int c=0;
         for(auto it:nums){
             if(it>0){
-                mp[it];
+                st.insert(it);
             }
         }
-        if(mp.size()==0){
+        if(st.size()==0){
             return 1;   
         }
         int ans=INT_MIN;
         int ma=INT_MIN;
-        for(auto it:mp){
+        for(auto it:st){
             c++;
-            ma=max(ma,it.first);
-            if(it.first!=c){
+            ma=max(ma,it);
+            if(it!=c){
                 ans=c;
                 break;
             }
