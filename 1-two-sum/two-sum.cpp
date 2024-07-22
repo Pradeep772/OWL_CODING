@@ -7,7 +7,7 @@ public:
         }
         sort(nums.begin(),nums.end());
         int i=0,j=nums.size()-1;
-        vector<int>ans(2);
+        int a,b;
         while(i<=j){
             if((nums[i]+nums[j])<target){
                 i++;
@@ -16,13 +16,13 @@ public:
                 j--;
             }
             else{
-                ans[0]=mp[nums[i]][mp[nums[i]].size()-1];
+                a=mp[nums[i]][mp[nums[i]].size()-1];
                 mp[nums[i]].pop_back();
-                ans[1]=mp[nums[j]][mp[nums[j]].size()-1];
+                b=mp[nums[j]][mp[nums[j]].size()-1];
                 mp[nums[i]].pop_back();
                 break;
             }
         }
-        return ans;
+        return {a,b};
     }
 };
