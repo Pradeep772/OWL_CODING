@@ -9,7 +9,8 @@ public:
         int ans=0;
         while(k--){
             for(auto it:sum){
-                ans+=int(it)-48;
+                string st=to_string(it);
+                ans+=stoi(st)-48;
             }
             if(k!=0){
                 sum=to_string(ans);
