@@ -7,23 +7,22 @@ public:
                 mp[i]++;
             }
         }
+        int miss=0;
+        int f=1;
         vector<int>ans;
-        vector<int>val;
         for(auto it:mp){
+            if(it.first!=f && miss==0){
+                miss=f;
+            }
             if(it.second==2){
                 ans.push_back(it.first);
             }
-            val.push_back(it.first);
+            f++;
         }
-        for(int i=0;i<val.size();i++){
-            if(val[i]!=i+1){
-                ans.push_back(i+1);
-                break;
-            }
+        if(miss==0){
+            miss=f;
         }
-        if(ans.size()==1){
-            ans.push_back(val.size()+1);
-        }
+        ans.push_back(miss);
         return ans;
     }
 };
